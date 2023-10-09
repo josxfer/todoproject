@@ -25,7 +25,7 @@ function RegisterPage() {
             <p className="bg-red-500 text-white p-2 text-center">{err}</p>
           ))}
 
-        <h3 className="text-2xl font-bold text-blue-400">Regístrate</h3>
+        <h3 className="text-3xl font-bold">Regístrate</h3>
 
         <form onSubmit={onSubmit}>
           <Label htmlFor="name">Nombre completo</Label>

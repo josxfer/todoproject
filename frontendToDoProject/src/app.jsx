@@ -4,6 +4,7 @@ import { useAuth } from "./context/AuthContext";
 import { TaskProvider } from "./context/TaskContext";
 
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/footer";
 import { Container } from "./components/ui";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -58,6 +59,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
+      <Footer />
     </>
   );
 }

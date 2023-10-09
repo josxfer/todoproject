@@ -10,7 +10,7 @@ function Navbar() {
   const { isAuth, signout, user } = useAuth();
 
   return (
-    <nav className="bg-zinc-950 ">
+    <nav className="bg-purple-900">
       <Container className="flex justify-between py-3">
         <Link to="/">
           <h1 className="font-bold text-2xl flex">To Do Project</h1>
@@ -23,7 +23,7 @@ function Navbar() {
                   <Link
                     to={path}
                     className={twMerge(
-                      "text-slate-300 flex items-center px-3 py-1 gap-x-1",
+                      "text-slate-300 flex items-center px-3 py-1 gap-x-1 rounded-md",
                       location.pathname === path && "bg-sky-500"
                     )}
                   >
@@ -35,7 +35,7 @@ function Navbar() {
               ))}
 
               <li
-                className="text-slate-300 flex items-center px-3 py-1 hover:cursor-pointer"
+                className="text-slate-300 flex items-center px-3 py-1 hover:cursor-pointer rounded-md"
                 onClick={() => {
                   signout();
                 }}
@@ -56,7 +56,7 @@ function Navbar() {
             publicRoutes.map(({ path, name }) => (
               <li
                 className={twMerge(
-                  "text-slate-300 flex items-center px-3 py-1",
+                  "text-slate-300 flex items-center px-3 py-1 rounded-md",
                   location.pathname === path && "bg-sky-500"
                 )}
                 key={path}

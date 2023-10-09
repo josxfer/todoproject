@@ -26,7 +26,7 @@ export function LoginPage() {
             <p className="bg-red-500 text-white p-2 text-center">{err}</p>
           ))}
 
-        <h1 className="text-4xl font-bold my-2 text-center">Iniciar Sesion</h1>
+        <h1 className="text-3xl font-bold my-2 text-center">Iniciar Sesion</h1>
 
         <form onSubmit={onSubmit}>
           <Label htmlFor="email">Correo Electrónico</Label>
