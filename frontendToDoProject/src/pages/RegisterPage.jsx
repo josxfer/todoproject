@@ -14,9 +14,7 @@ function RegisterPage() {
 
   const onSubmit = handleSubmit(async (data) => {
     const user = await signup(data);
-    if (user) {
-      navigate("/profile");
-    }
+    if (user) navigate("/tasks");
   });
 
   return (
@@ -51,7 +49,7 @@ function RegisterPage() {
             })}
           />
 
-          {errors.name && (
+          {errors.email && (
             <p className="text-red-500">El correo electrónico es requerido</p>
           )}
 
@@ -64,14 +62,14 @@ function RegisterPage() {
             })}
           />
 
-          {errors.name && (
+          {errors.password && (
             <p className="text-red-500">La contraseña es requerida</p>
           )}
 
           <Button>Regístrate</Button>
 
           <div className="flex justify-between my-4">
-            <p>¿Ya tienes una cuenta?</p>
+            <p className="mr-4">¿Ya tienes una cuenta?</p>
             <Link to="/login" className="font-bold">
               Inicia Sesion
             </Link>

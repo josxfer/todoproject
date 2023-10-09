@@ -4,23 +4,25 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 
 export function LoginPage() {
-  const { register, handleSubmit } = useForm();
-  const { signin, errors } = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { signin, errors: loginErrors } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (data) => {
     const user = await signin(data);
 
-    if (user) {
-      navigate("/profile");
-    }
+    if (user) navigate("/tasks");
   });
 
   return (
     <Container className="h-[calc(100vh-10rem)] flex justify-center items-center">
       <Card>
-        {errors &&
-          errors.map((err) => (
+        {loginErrors &&
+          loginErrors.map((err) => (
             <p className="bg-red-500 text-white p-2 text-center">{err}</p>
           ))}
 
@@ -36,6 +38,10 @@ export function LoginPage() {
             })}
           />
 
+          {errors.email && (
+            <p className="text-red-500">El correo electrónico es requerido</p>
+          )}
+
           <Label htmlFor="password">Contraseña</Label>
           <Input
             type="password"
@@ -44,12 +50,15 @@ export function LoginPage() {
               required: true,
             })}
           />
+          {errors.password && (
+            <p className="text-red-500">La contraseña es requerida</p>
+          )}
 
           <Button>Iniciar Sesion</Button>
         </form>
 
         <div className="flex justify-between my-4">
-          <p>¿No tienes una cuenta?</p>
+          <p className="mr-4">¿No tienes una cuenta?</p>
           <Link to="/register" className="font-bold">
             Regístrate
           </Link>

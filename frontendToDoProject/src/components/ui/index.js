@@ -3,3 +3,4 @@ export { Card } from "./Card";
 export { Input } from "./Input";
 export { Label } from "./Label";
 export { Container } from "./container";
+export { Textarea } from "./Textarea";
