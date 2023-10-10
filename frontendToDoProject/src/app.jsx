@@ -4,7 +4,7 @@ import { useAuth } from "./context/AuthContext";
 import { TaskProvider } from "./context/TaskContext";
 
 import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/footer";
+import Footer from "./components/footer/Footer";
 import { Container } from "./components/ui";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
