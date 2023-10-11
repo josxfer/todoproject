@@ -10,7 +10,7 @@ function Navbar() {
   const { isAuth, signout, user } = useAuth();
 
   return (
-    <nav className="bg-purple-900">
+    <nav className="bg-sky-800">
       <Container className="flex justify-between py-3">
         <Link to="/">
           <h1 className="font-bold text-2xl flex">To Do Project</h1>
@@ -23,8 +23,8 @@ function Navbar() {
                   <Link
                     to={path}
                     className={twMerge(
-                      "text-slate-300 flex items-center px-3 py-1 gap-x-1 rounded-md",
-                      location.pathname === path && "bg-sky-500"
+                      "text-slate-300 flex items-center px-3 py-1 gap-x-1 rounded-md hover:text-slate-200",
+                      location.pathname === path && "bg-blue-700"
                     )}
                   >
                     {icon}
@@ -35,12 +35,12 @@ function Navbar() {
               ))}
 
               <li
-                className="text-slate-300 flex items-center px-3 py-1 hover:cursor-pointer rounded-md"
+                className="text-slate-300 flex items-center px-3 py-1 hover:cursor-pointer rounded-md hover:text-slate-200"
                 onClick={() => {
                   signout();
                 }}
               >
-                <TbLogout className="w-5 h-5 text-slate-300"></TbLogout>
+                <TbLogout className="w-5 h-5 text-slate-300 hover:text-slate-200"></TbLogout>
                 <span className="hidden sm:block">Cerrar sesión</span>
               </li>
               <li className="flex gap-x-1 items-center justify-center">
@@ -56,8 +56,8 @@ function Navbar() {
             publicRoutes.map(({ path, name }) => (
               <li
                 className={twMerge(
-                  "text-slate-300 flex items-center px-3 py-1 rounded-md",
-                  location.pathname === path && "bg-sky-500"
+                  "text-slate-300 flex items-center px-3 py-1 rounded-md hover:text-slate-200",
+                  location.pathname === path && "bg-blue-700 hover:text-slate-200"
                 )}
                 key={path}
               >

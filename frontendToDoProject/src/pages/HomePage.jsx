@@ -1,5 +1,3 @@
-import { Card } from "../components/ui";
-
 function HomePage() {
   return (
     <div>

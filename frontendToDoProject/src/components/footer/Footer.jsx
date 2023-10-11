@@ -3,7 +3,7 @@ import { AiFillHeart } from "react-icons/ai";
 
 function Footer() {
   return (
-    <nav className="bg-purple-900 fixed bottom-0 inset-x-0">
+    <nav className="bg-sky-800 fixed bottom-0 inset-x-0">
       <Container className="flex justify-between py-3">
         <h1 className="flex font-light text-slate-300">
           Proyecto final para Dev.F
